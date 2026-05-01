@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: isc-drawing-analyser-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter          # upgrade to standard for production
+    healthCheckPath: /health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false        # set manually in Render dashboard
+      - key: APP_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
