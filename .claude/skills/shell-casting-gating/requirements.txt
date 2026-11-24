@@ -1,0 +1,13 @@
+cadquery-ocp
+numpy
+scipy
+numba
+scikit-image
+shapely
+trimesh
+networkx
+rtree
+manifold3d
+fast-simplification
+matplotlib
+openpyxl
