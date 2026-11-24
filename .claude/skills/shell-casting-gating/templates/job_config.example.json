@@ -1,0 +1,24 @@
+{
+ "_comment": "One config per job. Paths are relative to this file. Casting-local frame AFTER orientation: draw = Z, parting Z = 0, feeding face = +Y, long axis = X. Values below are from the first (rocker-lever) job - replace per part.",
+ "job": "PART-NO rev - description",
+ "output_dir": "out",
+ "part": {"step": "casting.step", "alloy": "Ductile iron 65-45-12", "rho_solid": 7.1, "rho_liquid": 7.0, "T_liquidus": 1150},
+ "orientation": {"_comment": "applied in order, degrees; add [\"z\", 180] to make the underside the feeding face", "rotations": [], "translate": [0, 0, 0]},
+ "plate": {"x": 750, "y": 650, "margin": 30},
+ "feeding": {
+  "_comment": "one neck per isolated hot spot: x = hot-spot X, face_y = Y of the feeding face there, w x t = neck section (t straddles parting)",
+  "necks": [{"x": -23.0, "face_y": 15.7, "w": 16, "t": 15}, {"x": 28.5, "face_y": 14.0, "w": 13, "t": 15}],
+  "neck_gap": 5.0,
+  "riser": {"D": 28, "z0": -14, "z1": 36},
+  "runner_d": 14
+ },
+ "criteria": {"neck_vs_arm": 1.10, "riser_vs_neck": 1.30, "far_cavity_min_C": 1320, "near_cavity_max_C": 1420, "feed_eff_max": 0.11, "liquid_contraction_pct_per_100C": 1.6},
+ "simulation": {"dx": 1.0, "T_in_mould": 1370, "cold_delta": -70},
+ "layout": {"_comment": "rows / per_half: omit to maximise", "cast_gap": 15, "row_gap": 19, "x_start": 55,
+            "branch_root_d": 16, "branch_min_d": 10, "cross_root_d": 22, "cross_tip_d": 16, "well": {"d": 10, "depth": 25}, "min_sand_mm": 5},
+ "pouring": {"fill_time_s": 11, "filter_size_mm": 50, "filter_capacity_kg": 40, "filter_rate_kg_s": 4, "discharge_coeff": 0.75,
+             "governing_section_mm": 8, "fluidity_K": 1.0, "T_cup_design": 1440, "cup_to_runner_loss": 30, "ladle_drop_C": 55},
+ "shell": {"thickness": 12, "rib_w": 8, "rib_h": 15, "rib_pitch": 120, "rim_w": 25, "riser_vent_d": 4, "sand_density": 1550,
+           "_comment_core": "core_box = casting-local [x0,x1,y0,y1,0,z_top] print seat for the cope; z_top above the highest pocket ceiling; null if no core",
+           "core_box": [-10.5, 9.0, -22.45, 21.45, 0.0, 13.0]}
+}

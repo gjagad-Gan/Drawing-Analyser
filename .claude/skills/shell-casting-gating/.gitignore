@@ -1,0 +1,10 @@
+# job outputs and customer data must never be committed (confidential)
+__pycache__/
+out/
+*.step
+*.stp
+*.STEP
+*.stl
+*.npz
+*.pdf
+*.xlsx
